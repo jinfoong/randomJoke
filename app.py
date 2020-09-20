@@ -4,7 +4,7 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
-def index:
+def index():
 	rname = requests.get('https://randomuser.me/api/')
 	rjoke = requests.get('https://api.chucknorris.io/jokes/random')
 
@@ -31,6 +31,6 @@ def index:
 
 	return newjokeStr
 
-if __name__ == '__main__'
+if __name__ == '__main__':
 	app.run(host="0.0.0.0", port=5000)
 
